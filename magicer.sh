@@ -32,11 +32,7 @@ if (fp == NULL)
     long file_size = get_file_size(fp);
     unsigned char *Header = bytes();
     long header_size = sizeof(Header);
-    long new_file_size = file_size + header_size;
-
-
-    // calloc töötab ka
-   // unsigned char *data = (char*) calloc (file_size, sizeof (char));
+    long new_file_size = file_size + header_size; 
     unsigned char data[file_size];
     fread(data, 1, file_size, fp);
     fclose(fp);
